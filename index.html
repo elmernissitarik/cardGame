@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Random Card Picker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Press the button to withdraw a card</h1>
+        <div class="card-container">
+            <div class="card" id="card">
+                <!-- Front and back of the card for flip effect -->
+                <div class="card-face card-back" id="card-back">
+                    <!-- Random card text will appear here -->
+                </div>
+                <!-- Add artistic elements -->
+                <div class="decorative-elements">
+                    <div class="circle"></div>
+                    <div class="triangle"></div>
+                    <div class="stylized-alphabet">S</div>
+                </div>
+            </div>
+        </div>
+        <button class="button" onclick="pickCard()">Pick a Card</button>
+
+        <!-- Kama Sutra image container -->
+        <div class="kama-sutra-image" id="kamaSutraImage">
+            <button class="close-btn" onclick="closeKamaSutra()">X</button>
+            <img src="kamasutra.png" alt="Kama Sutra Illustration">
+        </div>
+
+        <!-- Kama Sutra Button -->
+        <button class="kama-sutra-btn" onclick="showKamaSutra()">Kama Sutra</button>
+    </div>
+
+    <!-- Timer Section -->
+    <div class="timer-container">
+        <h2>Timer</h2>
+        <div id="timer-display">00:00</div>
+        <div class="timer-buttons">
+            <button class="timer-btn" onclick="startTimer(1)">1 Minute</button>
+            <button class="timer-btn" onclick="startTimer(2)">2 Minutes</button>
+            <button class="timer-btn" onclick="startTimer(3)">3 Minutes</button>
+            <button class="timer-btn" onclick="startTimer(5)">5 Minutes</button>
+            <button class="timer-btn" onclick="startTimer(10)">10 Minutes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

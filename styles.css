@@ -1,0 +1,205 @@
+/* General settings for the entire app */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Container for the entire card and timer section */
+.container {
+    text-align: center;
+    color: white;
+    max-width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    margin-bottom: 2vh;
+}
+
+/* Card container for the flip effect */
+.card-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Style the card */
+.card {
+    width: 90%;  /* Adjusted for iPhone 13 */
+    height: auto;
+    padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, rgba(255,0,0,0.9), rgba(0,0,0,0.9));
+}
+
+/* Card faces */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 6vw;  /* Responsive font size for iPhone 13 */
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
+
+.card-back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+}
+
+/* Flipping the card */
+.flip .card {
+    transform: rotateY(180deg);
+}
+
+/* Stylized card illustrations */
+.circle, .triangle, .stylized-alphabet {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.circle {
+    top: 10%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.triangle {
+    bottom: 10%;
+    right: 10%;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid rgba(255, 255, 255, 0.2);
+}
+
+.stylized-alphabet {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cursive';
+    font-size: 18vw;  /* Responsive alphabet size */
+    color: rgba(255, 255, 255, 0.1);
+}
+
+/* Button styles */
+.button, .kama-sutra-btn, .timer-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    font-size: 5vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover, .kama-sutra-btn:hover, .timer-btn:hover {
+    background-color: red;
+}
+
+.button:active, .kama-sutra-btn:active, .timer-btn:active {
+    transform: scale(0.95);
+}
+
+/* Kama Sutra button in the bottom-right corner */
+.kama-sutra-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Kama Sutra image display */
+.kama-sutra-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 999;
+}
+
+.kama-sutra-image img {
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+/* Close button for the Kama Sutra image */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 6vw;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+/* Timer container */
+.timer-container {
+    margin-top: 2vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Timer display */
+#timer-display {
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+
+/* Timer buttons */
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 428px) {
+    .timer-btn {
+        font-size: 5vw;
+    }
+
+    #timer-display {
+        font-size: 8vw;
+    }
+
+    .button {
+        font-size: 4.5vw;
+    }
+
+    .kama-sutra-btn {
+        padding: 10px 20px;
+    }
+}
